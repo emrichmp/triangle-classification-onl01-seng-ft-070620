@@ -11,16 +11,16 @@ class Triangle
       raise TriangleError
     elsif @first+@second <= @third || @first+@third <= @second || @second+@third <= @first
       raise TriangleError
-    end
-    if @first == @second && @second == @third
+    else
+      if @first == @second && @second == @third
       :equilateral
-    elsif @first == @second || @second == @third || @first == @third
+      elsif @first == @second || @second == @third || @first == @third
       :isosceles
-    elsif @first != @second && @second != @third && @first != @third
+      elsif @first != @second && @second != @third && @first != @third
       :scalene
+      end
     end
   end
-  
 end
 
   class TriangleError < StandardError
